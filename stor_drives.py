@@ -107,7 +107,7 @@ class in_win:
         #SSD Frame
         #
         
-        sd_title=CTkLabel(ssdframe, text="HDD", font=("Berlin",30), text_color="#f37367")
+        sd_title=CTkLabel(ssdframe, text="SSD", font=("Berlin",30), text_color="#f37367")
         sd_title.grid(row=0,column=0, columnspan=2,padx=20,pady=20)
         
         

@@ -1,0 +1,111 @@
+Product ID: 13260
+Product Name: Legion Gaming PC - Nvidia RTX 2070 Super 8GB - Intel i5 8500 6 Core - 16GB RAM - 512GB M.2
+---
+Product ID: 13259
+Product Name: Legion Gaming PC - Nvidia RTX 2070 Super 8GB - Intel i7 9700K - 16GB RAM - 512GB M.2
+---
+Product ID: 10367
+Product Name: Entry Level Gaming PC - Nvidia GTX 750-Ti 2GB - Intel i5 4590 Quad Core - 8GB RAM
+---
+Product ID: 10366
+Product Name: Starter Gaming PC - Nvidia GTX 960 2GB - Intel i5 4590 Quad Core - 8GB RAM
+---
+Product ID: 10365
+Product Name: i7 Gaming PC - Nvidia GTX 1060 6GB - Intel i7 6700 - 16GB DDR4 RAM
+---
+Product ID: 9638
+Product Name: DDR4 i5 Gaming PC - Nvidia GTX 1050 Ti 4GB - Intel i5 6500 Quad Core - 16GB RAM
+---
+Product ID: 9627
+Product Name: RX Gaming PC - AMD RX 580 8GB - Intel i5 7500 Quad Core - 12GB RAM - 240GB SSD
+---
+Product ID: 8888
+Product Name: DDR4 i7 Gaming PC - Nvidia GTX 1050 Ti 4GB - Intel i7 6700 - 16GB DDR4 RAM
+---
+Product ID: 8528
+Product Name: i7 Gaming PC - Nvidia GTX 1060 6GB - Intel i7 4770 - 12GB RAM
+---
+Product ID: 8524
+Product Name: HP Elitedesk 800 G5 USFF – i5 8500, 16GB RAM, 240GB SSD, Windows
+---
+Product ID: 8523
+Product Name: HP Prodesk 400 G4 SFF – i5 6th Gen, 8GB RAM, 120GB SSD / 500GB HDD, Wi-Fi, Windows
+---
+Product ID: 8516
+Product Name: Dell Optiplex 3020 USFF – i5 4th Gen, 8GB RAM, 500GB HDD/SSD, 1 Year Warranty
+---
+Product ID: 8449
+Product Name: HP Gaming PC - Nvidia GTX 1050 Ti 4GB - Intel i5 4590 Quad Core - 8GB RAM
+---
+Product ID: 8444
+Product Name: GeForce Gaming PC - Nvidia GTX 1070 8GB - Intel i5 7500 Quad Core - 16GB DDR4
+---
+Product ID: 8443
+Product Name: 970 Gaming PC - Nvidia GTX 970 4GB - Intel i5 4590 Quad Core - 12GB RAM
+---
+Product ID: 8244
+Product Name: Ray Tracing Gaming PC - Nvidia RTX 3070 8GB - Intel i5 8500 6 Core - 16GB RAM - 500GB SSD
+---
+Product ID: 8239
+Product Name: HP 280 G2 SFF Business PC – i5 6th Gen Quad Core, 8GB DDR4 RAM
+---
+Product ID: 8175
+Product Name: Ray Tracing Gaming PC - Nvidia RTX 3060 Ti 8GB - Intel i5 8500 6 Core - 16GB DDR4 RAM - 240GB SSD
+---
+Product ID: 7820
+Product Name: PowerSave Gaming PC - AMD RX 580 4GB - Intel i3 4170 - 12GB RAM - Bronze PSU
+---
+Product ID: 7815
+Product Name: PowerSave Gaming PC - AMD RX 580 4GB - Intel i3 6100 - 12GB DDR4 - Bronze PSU
+---
+Product ID: 7558
+Product Name: DDR4 Gaming PC - Nvidia GTX 970 4GB - Intel i5 6500 Quad Core- 12GB 2400MHz RAM
+---
+Product ID: 7189
+Product Name: Entry Level Gaming PC - Nvidia GTX 750-Ti 2GB - Intel i3 4170 - 8GB RAM - Bronze PSU
+---
+Product ID: 7180
+Product Name: GeForce Gaming PC - Nvidia GTX 1070 8GB - Intel i5 6500 Quad Core - 12GB DDR4
+---
+Product ID: 7128
+Product Name: Racing Sim Gaming PC - Nvidia GTX 1050 Ti 4GB - Intel i7 4770 - 12GB RAM
+---
+Product ID: 6998
+Product Name: 500GB-2TB Hard Drive(s)
+---
+Product ID: 6990
+Product Name: RGB Mice / Keyboards / Headsets / Mousepads & Standard peripherals
+---
+Product ID: 6986
+Product Name: 22-24" Dell 1080p Monitor
+---
+Product ID: 6983
+Product Name: RGB Fans / Strips / Kits
+---
+Product ID: 6979
+Product Name: Wi-Fi / Bluetooth Adapters
+---
+Product ID: 6972
+Product Name: Display Cables - HDMI / DVI / Display Port
+---
+Product ID: 6963
+Product Name: Ethernet Cables 2m
+---
+Product ID: 6945
+Product Name: 128GB-240GB 2.5" Solid State Drive
+---
+Product ID: 6941
+Product Name: DDR3 Memory Module 4GB / 8GB RAM
+---
+Product ID: 6926
+Product Name: Starter Gaming PC - Nvidia GTX 960 2GB - Intel i3 4170 - 8GB RAM - Bronze PSU
+---
+Product ID: 6750
+Product Name: 1080 Gaming PC - Nvidia GTX 1080 8GB - Intel i5 8500 6 Core - 16GB RAM - 240GB SSD
+---
+Product ID: 6748
+Product Name: Hexacore Gaming PC - Nvidia GTX 1080 Ti 11GB - Intel i5 8500 6 Core - 16GB RAM - 240GB SSD
+---
+Product ID: 6746
+Product Name: Ultra Gaming PC - RTX 3080 10GB - Intel i7 9700K - 24GB RAM - 1TB SSD
+---
