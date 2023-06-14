@@ -32,6 +32,9 @@ scan individual barcode-> remove item from stock
 
 '''
 
+
+
+
 def get_orders():
     subwin=CTkToplevel()
     subwin.geometry("200x200")
