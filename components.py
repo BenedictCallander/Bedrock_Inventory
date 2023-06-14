@@ -4,14 +4,15 @@ import qrcode
 import uuid
 
 '''
-dataframe convention: {"TYPE": , "BRAND": , "NAME": , "ID":, "Location":}
+dataframe convention: {"TYPE": , "BRAND": , "NAME": , "ID":, "Cost": , "Location":}
 '''
 
 class gpu:
-    def __init__(self, brand, name,location):
+    def __init__(self, brand, name,cost,location):
         self.brand=brand
         self.name=name
         self.id=uuid.uuid4()
+        self.cost=cost
         self.type="GPU"
         self.location= location
         #return (self.brand, self.name, self.id)
@@ -30,7 +31,7 @@ class gpu:
         add to dataframe
         '''
         dfin=pd.read_csv("requisites/gpu.csv")
-        add=pd.DataFrame({"TYPE": str(self.type), "BRAND":str(self.brand) , "NAME": str(self.name), "ID": self.id, "Location": str(self.location)},index=[0])
+        add=pd.DataFrame({"TYPE": str(self.type), "BRAND":str(self.brand) , "NAME": str(self.name), "ID": self.id,"Cost": self.cost , "Location": str(self.location)},index=[0])
         dflist=[dfin,add]
         dfout=pd.concat(dflist, axis='rows', ignore_index=True)
         dfout.to_csv("requisites/gpu.csv", index=False)

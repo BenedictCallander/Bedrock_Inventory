@@ -10,13 +10,13 @@ import sqlite3
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from PIL import Image
+
 '''
 colours
 background: bedrock dark gray "#2E2E2E"
 hover: bedrock green "#72c05b"
 foreground/accent: bedrock orange "#f37367"
 '''
-
 
 class input_windows:
     def import_window():
@@ -32,6 +32,7 @@ class input_windows:
         gcpu_frame.configure(fg_color="#2E2E2E")
         gcpu_frame.grid(row=1, column=0, padx=20,pady=20)
         #BCUTILS.cleardir(cgpu_directory)
+        
         label_title=CTkLabel(gcpu_frame, text="Add Stock", font=("Berlin", 20), text_color="#f37367")
         label_title.grid(row=0,column=0, columnspan= 4,padx=20,pady=20)
         label_type = CTkLabel(gcpu_frame, text="Product Type:", font=("Berlin", 20), text_color="#f37367")
@@ -42,16 +43,22 @@ class input_windows:
         label_name.grid(row=3, column= 1,padx=20,pady=20)
         label_location= CTkLabel(gcpu_frame, text="Location", font=("Berlin", 20), text_color="#f37367")
         label_location.grid(row=4, column= 1,padx=20,pady=20)
+        
+        label_cost=CTkLabel(gcpu_frame, text="Cost:",font=("Berlin",20), text_color="#f37367")
+        label_cost.grid(row=5, column=1,padx=20,pady=20)
 
         entry_type=CTkEntry(gcpu_frame, width=200)
         entry_brand=CTkEntry(gcpu_frame,width=200)
         entry_name= CTkEntry(gcpu_frame,width=200)
         entry_location= CTkEntry(gcpu_frame,width=200)
+        entry_cost=CTkEntry(gcpu_frame, width=200)
         
         entry_type.grid(row=1, column= 2,columnspan=3,padx=20,pady=20)
         entry_brand.grid(row=2, column= 2,columnspan=3,padx=20,pady=20)
         entry_name.grid(row=3, column= 2,columnspan=3,padx=20,pady=20)
         entry_location.grid(row=4, column=2,columnspan=3,padx=20,pady=20)
+        entry_cost.grid(row=5, column=2,columnspan=3,padx=20,pady=20)
+        
         
         def buttonpress_CGPU():
             check= str(entry_type.get())
@@ -64,7 +71,7 @@ class input_windows:
                 entry_name.delete(0,END)
 
             elif check == "GPU":
-                addtask= components.gpu(entry_brand.get(), entry_name.get(), entry_location.get())
+                addtask= components.gpu(entry_brand.get(), entry_name.get(), entry_cost.get(),entry_location.get())
                 addtask.add_gen()
                 conn=sqlite3.connect("requisites/stock.db")
                 c=conn.cursor()
@@ -86,9 +93,9 @@ class input_windows:
             BCUTILS.getprintlist(cgpu_directory,"requisites/printlist.txt")
 
         submit_button= CTkButton(gcpu_frame, text="Submit",width=250, height=100, fg_color="#f37367", hover_color= "#72c05b", corner_radius=15,command=buttonpress_CGPU)
-        submit_button.grid(row=5, column= 2, columnspan=2,padx=20,pady=20)
+        submit_button.grid(row=6, column= 2, columnspan=2,padx=20,pady=20)
         printlist_button= CTkButton(gcpu_frame, text="Printlist",width=250, height=100, fg_color="#f37367", hover_color= "#72c05b",corner_radius=15, command=printbuttonpress_CGPU)
-        printlist_button.grid(row=6, column= 2,columnspan=2,padx=20,pady=20)
+        printlist_button.grid(row=7, column= 2,columnspan=2,padx=20,pady=20)
 
         power_frame=CTkFrame(subwin,border_width=5, border_color="black")
         power_frame.configure(fg_color="#2E2E2E")
@@ -121,10 +128,8 @@ class input_windows:
         button_psu.grid(row=3, column=1,pady=20,padx=10)
         printlist_button= CTkButton(power_frame, text="Printlist",width=150, height=75, fg_color="#f37367", hover_color= "#72c05b",corner_radius=30, command=printbuttonpress_PSU)
         printlist_button.grid(row=4, column= 1,pady=20,padx=10)
-        
-        
+                
         subwin.mainloop()
-
 
 class view_windows:
     def view_win():
@@ -173,17 +178,18 @@ class view_windows:
         gpu_list_brand= list(df_gpu['BRAND'])
         gpu_list_name=list(df_gpu['NAME'])
         gpu_list_loc=list(df_gpu['Location'])
+        gpu_list_cost=list(df_gpu['Cost'])
         gpu_list_id=list(df_gpu['ID'])
         #
         #plot tree
         #
-        gpu_headings = ("Brand", "Name", "Location", "ID")
+        gpu_headings = ("Brand", "Name", "Location", "Cost", "ID")
         gpu_tree = ttk.Treeview(gpu_frame, columns=gpu_headings, show='headings')
         gpu_tree.grid(row=1, column=0, padx=20, pady=20)
         for heading in gpu_headings:
             gpu_tree.heading(heading, text=heading)
-        for brand, name, location, id in zip(gpu_list_brand, gpu_list_name,gpu_list_loc, gpu_list_id):
-            gpu_tree.insert('', 'end', values=(brand, name, location, id))
+        for brand, name,location,cost,id in zip(gpu_list_brand, gpu_list_name,gpu_list_loc,gpu_list_cost,gpu_list_id):
+            gpu_tree.insert('', 'end', values=(brand, name, location,cost,id))
 
         #
         #

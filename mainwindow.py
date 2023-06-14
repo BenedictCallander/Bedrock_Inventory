@@ -8,6 +8,7 @@ from BCUTILS import backup
 import BCUTILS
 import used_system
 import accessories
+from stor_drives import in_win
 import getorders
 
 '''
@@ -59,7 +60,7 @@ def main():
     button5 = CTkButton(buttonframe, text="Stock Dashboard",command=view_windows.view_win,
     fg_color=button_fg,border_color="#72c05b",hover_color="#72c05b", height=100, width=200, corner_radius= 50)
 
-    button6 = CTkButton(buttonframe, text="Get Orders",command=getorders.get_orders,
+    button6 = CTkButton(buttonframe, text="Get Orders",command=in_win.stor_win,
     fg_color=button_fg,border_color="#72c05b",hover_color="#72c05b", height=100, width=200, corner_radius= 50) 
 
     button7 = CTkButton(buttonframe, text="View Accessories",command=accessories.acc_win.acc_view,
