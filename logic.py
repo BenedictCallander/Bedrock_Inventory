@@ -25,3 +25,17 @@ def item_location():
     OUTPUTS: Item Location 
     
     '''
+
+
+def ram_sticks(capacity):
+    if capacity == 8:
+        no_4 = 2
+        no_8=0
+    elif capacity==16:
+        no_4=4 
+        no_8=2
+    elif capacity==12:
+        no_4=3 
+        no_4_var=1
+        no_8=1
+    return (no_4, no_8)

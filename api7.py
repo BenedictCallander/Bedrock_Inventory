@@ -8,7 +8,7 @@ consumer_key = "ck_e63f2847761567231436732f8c753e392fd81614"
 consumer_secret = "cs_d40131313ebeeb4e1bd8b8fb67e41afd487685cf"
 
 # Calculate the date and time 24 hours ago
-start_date = datetime.now() - timedelta(hours=24)
+start_date = datetime.now() - timedelta(hours=72)
 
 # Format the start date as required by the WooCommerce API
 start_date_formatted = start_date.strftime('%Y-%m-%dT%H:%M:%S')
