@@ -55,4 +55,3 @@ def fetch_orders():
     tree.pack(fill='both', expand=True)
     top.mainloop()
 
-fetch_orders()
