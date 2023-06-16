@@ -131,34 +131,32 @@ class input_windows:
                 
         subwin.mainloop()
 
-class view_windows:
-    def view_win():
-        win=CTkToplevel()
+class view_window:
+    def view():
+        viewsubwin=CTkToplevel()
+        viewsubwin.configure(fg_color="#2E2E2E")
+        viewsubwin.geometry("1280x720")
+        
+        
+        tabview=CTkTabview(master=viewsubwin)
+        tabview.pack(padx=20,pady=20)
+        tab1=tabview.add("CPU")
+        tab2=tabview.add("GPU")
+        tab3=tabview.add("PSU")
+        tab4=tabview.add("Graphics")
+        tabview.configure(fg_color="#f37367",
+                          border_color='black',
+                          segmented_button_fg_color="#2E2E2E",
+                          segmented_button_unselected_color="#fcba03",
+                          segmented_button_selected_color="#72c05b")
+        
+        tabs=[tab1,tab2,tab3,tab4]
+        for tab in tabs:
+            tab.configure(fg_color="#2E2E2E")
+        
+        
 
-        win.configure(fg_color="#2E2E2E")
-        win.title("BEDROCK: COMPONENT STOCK VIEW")
-        bigtitle=CTkLabel(win, text="Stock Dashboard", font=("Berlin",30), text_color="#72c05b")
-        bigtitle.grid(row=0,column=0,columnspan=2)
-
-        #
-        # Set up frames and Grid
-        #
-
-        cpu_frame=CTkFrame(win, fg_color="#2E2E2E",border_color="black", border_width=2)
-        psu_frame=CTkFrame(win, fg_color="#2E2E2E",border_color="black", border_width=2)
-        psu_plot_frame=CTkFrame(win, fg_color="#2E2E2E",border_color="black", border_width=2)
-        gpu_frame=CTkFrame(win, fg_color="#2E2E2E",border_color="black", border_width=2)
-        #ff_frame1=CTkFrame(win, fg_color="#2E2E2E",border_color="black", border_width=2)
-        #ff_frame2=CTkFrame(win, fg_color="#2E2E2E",border_color="black", border_width=2)
-
-        cpu_frame.grid(row=1,column=0,padx=20,pady=20)
-        #ff_frame1.grid(row=0,column=1,padx=20,pady=20)
-        psu_frame.grid(row=2, column=0,padx=20,pady=20)
-        psu_plot_frame.grid(row=2, column=1,padx=20,pady=20)
-
-        gpu_frame.grid(row=1, column=1,padx=20,pady=20)
-        #ff_frame2.grid(row=2,column=1,padx=20,pady=20)
-
+        
         style = ttk.Style()
         style.theme_use("default")
         style.configure("Treeview",background="#2a2d2e",foreground="white",rowheight=25,fieldbackground="#343638",bordercolor="#343638",borderwidth=0)
@@ -169,7 +167,7 @@ class view_windows:
         #
         #GPU
         #
-        gpu_title_label=CTkLabel(gpu_frame, text="GPU STOCK", font=("Berlin",20), text_color="#f37367")
+        gpu_title_label=CTkLabel(tab2, text="GPU STOCK", font=("Berlin",20), text_color="#f37367")
         gpu_title_label.grid(row=0, column=0, padx=20, pady=20)
         #
         #read data
@@ -184,7 +182,7 @@ class view_windows:
         #plot tree
         #
         gpu_headings = ("Brand", "Name", "Location", "Cost", "ID")
-        gpu_tree = ttk.Treeview(gpu_frame, columns=gpu_headings, show='headings')
+        gpu_tree = ttk.Treeview(tab2, columns=gpu_headings, show='headings')
         gpu_tree.grid(row=1, column=0, padx=20, pady=20)
         for heading in gpu_headings:
             gpu_tree.heading(heading, text=heading)
@@ -205,11 +203,11 @@ class view_windows:
         cpu_list_id=list(df_cpu['ID'])
         cpu_list_loc=list(df_cpu['Location'])
 
-        cpu_title_label=CTkLabel(cpu_frame, text="CPU STOCK", font=("Berlin",20), text_color="#f37367")
+        cpu_title_label=CTkLabel(tab1, text="CPU STOCK", font=("Berlin",20), text_color="#f37367")
         cpu_title_label.grid(row=0, column=0, padx=20, pady=20)
 
         cpu_headings= ("Brand","Name","Location", "ID")
-        cpu_tree=ttk.Treeview(cpu_frame,columns=cpu_headings, show='headings')
+        cpu_tree=ttk.Treeview(tab1,columns=cpu_headings, show='headings')
         cpu_tree.grid(row=1, column=0,pady=20,padx=20)
         for heading in cpu_headings:
             cpu_tree.heading(heading, text=heading)
@@ -234,10 +232,10 @@ class view_windows:
         c = conn.cursor()
         c.execute('SELECT * from psu')
         datapsu = c.fetchall()
-        psu_title_label=CTkLabel(psu_frame, text="PSU STOCK", font=("Berlin",20), text_color="#f37367")
+        psu_title_label=CTkLabel(tab3, text="PSU STOCK", font=("Berlin",20), text_color="#f37367")
         psu_title_label.grid(row=0, column=0, padx=20, pady=20)
         psu_headings = ("Power", "Price", "Stock")
-        psu_tree = ttk.Treeview(psu_frame, columns=psu_headings, show='headings')
+        psu_tree = ttk.Treeview(tab3, columns=psu_headings, show='headings')
         psu_tree.grid(row=1, column=0,padx=20,pady=20)
 
         for heading in psu_headings:
@@ -251,20 +249,55 @@ class view_windows:
         for i in range(len(power)):
             value=price[i]*stock[i]
             sum=sum+value
-        total=CTkLabel(psu_frame,text=f'Total Value: £{sum}',font=("Berlin", 20),text_color="#f37367")
+        total=CTkLabel(tab3,text=f'Total Value: £{sum}',font=("Berlin", 20),text_color="#f37367")
         total.grid(row=3, column=0,padx=20,pady=20)
 
-        plot_title= CTkLabel(psu_plot_frame, text="PSU Stock History", text_color="#f37367", font=("Berlin", 30))
-        plot_title.grid(row=0,column=0,padx=20,pady=20)
+        plot_title= CTkLabel(tab3, text="PSU Stock History", text_color="#f37367", font=("Berlin", 30))
+        plot_title.grid(row=0,column=5,padx=20,pady=20)
         fpath="requisites/temp_psu.png"
         plot_image=CTkImage(light_image=Image.open(fpath),size=(500,300))
-        img_label=CTkLabel(psu_plot_frame, image=plot_image, text='')
-        img_label.grid(row=1,column=0,padx=20,pady=20)
+        img_label=CTkLabel(tab3, image=plot_image, text='')
+        img_label.grid(row=1,column=5,padx=20,pady=20)
 
         conn.commit()
         conn.close()
+        
+        
+        
+        
+        
+        tree = ttk.Treeview(tab4)
+        columns = ['GPU', 'VRAM', 'Power Consumption', 'Cost', 'Stock Level']
 
-        win.mainloop()
+        # Set the column headings in the Treeview
+        tree['columns'] = columns
+        tree.heading('#0', text='Index', anchor='w')
+        for col in columns:
+            tree.heading(col, text=col, anchor='w')
+
+        # Connect to the SQLite database
+        conn = sqlite3.connect('requisites/stock.db')
+
+        # Create a cursor object to interact with the database
+        cursor = conn.cursor()
+
+        # Execute a SELECT query to fetch the data from the "graphics" table
+        cursor.execute("SELECT * FROM graphics")
+
+        # Fetch all rows from the result set
+        rows = cursor.fetchall()
+
+        # Close the database connection
+        conn.close()
+
+        # Insert the fetched data into the Treeview
+        for i, row in enumerate(rows):
+            tree.insert('', 'end', text=i+1, values=row)
+
+        # Pack the Treeview widget
+        tree.pack()
+        
+        viewsubwin.mainloop()
         
 class adjustment_windows:
     def pricewindow():
