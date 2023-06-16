@@ -47,11 +47,12 @@ for order in orders:
         if additions:
             print("Additions:")
             for addition in additions:
+                addition_id=addition['id']
                 addition_key = addition['key']
                 addition_value = addition['value']
 
                 # Exclude metadata with keys "_WCPA_order_meta_data" and "_wcpdf_regular_price"
                 if addition_key not in ('_WCPA_order_meta_data', '_wcpdf_regular_price'):
-                    print(f"{addition_key}: {addition_value}")
+                    print(f"{addition_id}:{addition_key}: {addition_value}")
 
         print('---')

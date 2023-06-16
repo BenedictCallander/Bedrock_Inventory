@@ -41,11 +41,23 @@ scan individual barcode-> remove item from stock
 
 
 
-def get_orders():
-    subwin=CTkToplevel()
-    subwin.geometry("200x200")
-    subwin.configure(fg_color="#2E2E2E")
-    label=CTkLabel(subwin, text="INDEV", font=("Berlin",30),text_color="#f37367")
-    label.pack()
+def order_stock_depletion(order_id, product_ID):
+    #order-> product_id
+    additions=[1]
+    sysinfo=pd.read_csv(f"requisites/systems/{product_ID}.csv")
     
-    subwin.mainloop()
+    order_cpu=sysinfo['CPU']
+    order_gpu=sysinfo['GPU']
+    order_ram=sysinfo['RAM']+ additions['RAM']
+    order_capacity=sysinfo['storage']+additions['storage']
+    
+    conn=sqlite3.connect("requisites/stock.db")
+    c=conn.cursor()
+    
+    #
+    #SQL remove query
+    #
+    
+    conn.commit()
+    conn.close()
+    

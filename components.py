@@ -64,7 +64,6 @@ class cpu:
         dfout=pd.concat(dflist, axis='rows', ignore_index=True)
         dfout.to_csv("requisites/cpu.csv", index=False)
 
-
 class psu:
     def __init__(self,power, location):
         self.power=power

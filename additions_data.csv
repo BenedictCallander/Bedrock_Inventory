@@ -1,0 +1,80 @@
+Attribute,Option ID,Option Name
+500GB HDD extra limit,137,+1
+500GB HDD extra limit,138,+2
+500GB HDD extra limit,140,+3
+500GB HDD extra limit,139,None
+accessory,168,no
+accessory,167,yes
+cables,174,no
+cables,173,yes
+cases,186,no
+cases,185,yes
+cleaning,218,no
+cleaning,217,yes
+customs,220,no
+customs,219,yes
+ethernet,176,no
+ethernet,175,yes
+hard drives,188,no
+hard drives,187,yes
+HP Elitedesk 400/800 SFF?,198,no
+HP Elitedesk 400/800 SFF?,197,yes
+HP Elitedesk 800 G1?,208,no
+HP Elitedesk 800 G1?,207,yes
+HP Prodesk 7th-9th?,204,no
+HP Prodesk 7th-9th?,203,yes
+HPProdeski7,228,no
+HPProdeski7,227,yes
+monitors,180,no
+monitors,179,yes
+No default case,144,No
+No default case,143,Yes
+Optiplex 3040,196,no
+Optiplex 3040,195,yes
+Optiplex 2nd-3rd?,202,o
+Optiplex 2nd-3rd?,201,yes
+Optiplex 5040?,212,no
+Optiplex 5040?,211,yes
+Optiplex 7040 USFF?,210,no
+Optiplex 7040 USFF?,209,yes
+Optiplexi7,226,no
+Optiplexi7,225,yes
+peripherals,184,no
+peripherals,183,yes
+ram,169,no
+ram,170,yes
+RAM upgradable to,134,12GB
+RAM upgradable to,135,16GB
+RAM upgradable to,145,24gb
+RAM upgradable to,136,32GB
+RAM upgradable to,133,N/A
+rgb-kit,182,no
+rgb-kit,181,yes
+servicing,222,no
+servicing,221,yes
+SFF?,200,no
+SFF?,199,yes
+ssd,172,no
+ssd,171,yes
+SSD installed already?,147,no
+SSD installed already?,146,yes
+Unique Case PC?,152,no
+Unique Case PC?,153,yes
+upgrading,224,no
+upgrading,223,yes
+USFF?,215,no
+USFF?,214,yes
+warranty_band,154,250-300
+warranty_band,155,300-350
+warranty_band,156,350-400
+warranty_band,157,400-450
+warranty_band,158,450-500
+warranty_band,159,500-550
+warranty_band,160,550-600
+warranty_band,161,600-650
+warranty_band,162,650-700
+warranty_band,163,700-750
+WiFi addon?,142,No
+WiFi addon?,141,Yes
+wifi bluetooth,178,no
+wifi bluetooth,177,yes

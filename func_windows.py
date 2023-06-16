@@ -138,7 +138,7 @@ class view_window:
         viewsubwin.geometry("1280x720")
         
         
-        tabview=CTkTabview(master=viewsubwin)
+        tabview=CTkTabview(master=viewsubwin, width=1200, height=600)
         tabview.pack(padx=20,pady=20)
         tab1=tabview.add("CPU")
         tab2=tabview.add("GPU")

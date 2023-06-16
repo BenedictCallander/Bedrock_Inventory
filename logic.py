@@ -197,4 +197,12 @@ def get_gpus():
     conn.close()
 
 
-get_cpus()
+def order_contents(orderin, id, cpu, ram, gpu, storage):
+    datastring=orderin
+    
+    data={"ID":id, "CPU": cpu, "RAM":ram, "GPU": gpu, "storage":storage}
+    
+    return data
+
+
+

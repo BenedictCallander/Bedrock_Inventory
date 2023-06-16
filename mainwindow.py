@@ -11,7 +11,7 @@ import accessories
 from stor_drives import in_win
 import getorders
 import order 
-
+from addproduct import add_product
 '''
 colours
 background: bedrock dark gray "#2E2E2E"
@@ -70,6 +70,19 @@ def main():
     button8 = CTkButton(buttonframe, text="Backup Database",command=backup.create_backup,
     fg_color=button_fg,border_color="#72c05b",hover_color="#72c05b", height=100, width=200, corner_radius= 50) 
     
+    button9 = CTkButton(buttonframe, text="Add Product (ADMIN)",command=add_product.product_window,
+    fg_color=button_fg,border_color="#72c05b",hover_color="#72c05b", height=100, width=200, corner_radius= 50) 
+    
+    button10 = CTkButton(buttonframe, text="AButton",
+    fg_color=button_fg,border_color="#72c05b",hover_color="#72c05b", height=100, width=200, corner_radius= 50) 
+    
+    button11 = CTkButton(buttonframe, text="AButton",
+    fg_color=button_fg,border_color="#72c05b",hover_color="#72c05b", height=100, width=200, corner_radius= 50) 
+    
+    button12 = CTkButton(buttonframe, text="AButton",
+    fg_color=button_fg,border_color="#72c05b",hover_color="#72c05b", height=100, width=200, corner_radius= 50) 
+    
+    
     button1.grid(row=4, column= 0,padx=15, pady=15)
     button2.grid(row=4, column=1,padx=15, pady=15)
     button3.grid(row=4, column=2,padx=15, pady=15)
@@ -78,6 +91,10 @@ def main():
     button6.grid(row=5, column=1,padx=15, pady=15)
     button7.grid(row=5, column=2,padx=15, pady=15)
     button8.grid(row=5, column=3,padx=15, pady=15)
+    button9.grid(row=6, column=0, padx=15, pady=15)
+    button10.grid(row=6, column=1, padx=15, pady=15)
+    button11.grid(row=6, column=2, padx=15, pady=15)
+    button12.grid(row=6, column=3, padx=15, pady=15)
 
     win.mainloop()
     exit()

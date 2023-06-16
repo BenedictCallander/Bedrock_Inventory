@@ -1,6 +1,6 @@
 import requests
 from woocommerce import API
-
+import pandas as pd
 # WooCommerce API credentials
 url = "https://bedrock-computers.co.uk/"
 consumer_key = "ck_e63f2847761567231436732f8c753e392fd81614"
@@ -28,11 +28,16 @@ while True:
 
 # Open a text file for writing
 file_path = "product_data.txt"
+
+product_list=[]
+name_list=[]
 with open(file_path, "w") as file:
     # Iterate over each product and extract the data
     for product in products:
         product_id = product['id']
         product_name = product['name']
+        product_list.append(product_id)
+        name_list.append(product_name)
         variations = product.get('variations', [])
 
         file.write(f"Product ID: {product_id}\n")
@@ -49,3 +54,6 @@ with open(file_path, "w") as file:
         file.write("---\n")
 
 print(f"Product data has been written to '{file_path}'.")
+
+df=pd.DataFrame({"ID": product_list, "Name": name_list})
+df.to_csv("requisites/products.csv")
