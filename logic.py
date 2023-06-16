@@ -29,6 +29,13 @@ def item_location():
 
 
 def ram_sticks(capacity):
+    r'''
+    INPUT: RAM CAPACITY OF ORDER
+    ram logic: Assume 2 slots on board; configurations as such 
+    will include further logic to implement manual change to 4 slot config in future
+    
+    OUTPUT(Number of 4GB Sticks, Number of 8GB Sticks)
+    '''
     if capacity == 8:
         no_4 = 2
         no_8=0
@@ -36,8 +43,7 @@ def ram_sticks(capacity):
         no_4=4 
         no_8=2
     elif capacity==12:
-        no_4=3 
-        no_4_var=1
+        no_4=1
         no_8=1
     return (no_4, no_8)
 

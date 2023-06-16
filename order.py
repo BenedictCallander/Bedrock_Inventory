@@ -67,3 +67,18 @@ def fetch_orders():
     tree.pack(fill='both', expand=True)
     orderwin.mainloop()
 
+
+'''
+Additions pseudocode:
+    check for additions:
+    scan for HDD and RAM 
+    if condition; if HDD condition/ssd condition
+    calculate total storage of both types 
+    connect to database and remove correct stock for each type 
+    
+    if condition; if ram addition
+    override product ram quantity: read type still 
+    remove correct ram (outsource ram logic to logic file)
+
+
+'''

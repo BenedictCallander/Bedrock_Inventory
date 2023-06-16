@@ -36,11 +36,25 @@ class pc_order:
 
         self.orderstatus=orderstatus #str("Received", "Processing" "Complete")
     
+    def obtain_stock_info(order_id):
+        #code to obtain product ID from input
+        productid=2
+        fpath_product=f"requisites/systems{productid}.csv"
+        #
+        #Breakdown product into components
+        #check for additions/conditions
+        #output final numbers to stock check
+    def order_state():
+        '''
+        command to change order status
+        '''
+        return 0
+        
     
 def process_orders():
     output_dir="orders/received"
     # Calculate the date and time 24 hours ago
-    start_date = datetime.now() - timedelta(hours=24)
+    start_date = datetime.now() - timedelta(hours=84)
 
     # Format the start date as required by the WooCommerce API
     start_date_formatted = start_date.strftime('%Y-%m-%dT%H:%M:%S')
@@ -88,5 +102,5 @@ def process_orders():
             file.write('\n'.join(order_details))
 
         # Process the orders
-        process_orders()
+process_orders()
         
